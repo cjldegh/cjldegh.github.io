@@ -71,10 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-陈佳乐的第二个博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-需要修改多条明细" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/11/04/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time class="dt-published" datetime="2022-11-04T01:00:26.000Z" itemprop="datePublished">2022-11-04</time>
+    <a href="/2022/11/06/%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E5%A4%9A%E6%9D%A1%E6%98%8E%E7%BB%86/" class="article-date">
+  <time class="dt-published" datetime="2022-11-06T10:52:26.000Z" itemprop="datePublished">2022-11-06</time>
 </a>
     
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/04/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8D%9A%E5%AE%A2/">陈佳乐的第个二博客</a>
+      <a class="p-name article-title" href="/2022/11/06/%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E5%A4%9A%E6%9D%A1%E6%98%8E%E7%BB%86/">需要修改多条明细</a>
     </h1>
   
 
@@ -93,66 +93,65 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <pre><code>1.  搭建Hexo
-    a. 安装git：
-        i. 为了把本地的网页文件上传到github上面去，需要用到工具———Git[下载地址]。Git是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git教程(学习教程，不是安装教程)
-        ii. 安装完成后在命令提示符中输入git --version来查看一下版本验证是否安装成功。
-    b. 安装node.js：Hexo是基于node.js编写的，所以需要安装一下node.js和里面的npm工具。
-        i. 官网下载nodejs官网
-        ii. 
-        iii. 这里要特别注意
-        这里的环境配置主要配置的是npm安装的全局模块所在的路径，以及缓存cache的路径，之所以要配置，是因为以后在执行类似：npm install express [-g] （后面的可选参数-g，g代表global全局安装的意思）的安装语句时，会将安装的模块安装到【C:\Users\用户名\AppData\Roaming\npm】路径中，占C盘空间。 
-        安装的文件夹【D:\nodejs】下创建两个文件夹【node_global】及【node_cache】
-        
-        iv. 安装时有个问题在下面会提到
-        v. 打开命令行终端，输入: node-v、npm-v 检查是否安装成功
-    c. 安装Hexo
-        i. 创建一个文件夹来存放自己的博客文件，然后cd到这个文件夹下面，或者在这个文件夹下面直接右击 git bash打开
-        ii. 输入 npm install -g hexo-cli 安装hexo
-        iii. 完成后hexo -v 验证是否成功
-        iv. 遇到的问题 ：使用npm安装时是全局安装，所以在上面安装node时需要特别注意配置环境变量；我在环境变量配置了使用nvm的node.js的位置，但是却没有将全模块所在路径和缓存路径放在我node.js安装的文件夹中，所以就会报错；‘hexo’ 不是内部或外部命令，也不是可运行的程序
-        
-        v. 初始化：接下来初始化一下hexo,即初始化我们的网站，进入我们主题根目录Hexo，输入hexo init初始化文件夹
-        vi. 
-        vii. 输入hexo g生成静态网页，然后输入hexo s打开本地服务器，
-        按ctrl+c关闭本地服务器。
-        viii. 
-    d. 注册github创建个人账号
-        i. 打开https://github.com/，新建一个项目仓库New repository，如下所示；存储库要按照下面这个格式 
-        只有这样，将来要部署到GitHub page的时候，才会被识别
-        ii. ：
-        iii. 
-    e. 生成SSH添加到gitHub上
-        i. 第一次使用git后需要将用户名和邮箱初始化，在之前存放博客创建的文件夹中，右键打开 git bash输入
-        ii. 
-        iii. 用下面的语句检查一下：
-        iv. 
-        v. 然后创建ssh:ssh，简单来讲，就是一个秘钥，其中，id_rsa是你这台电脑的私人秘钥，不能给别人看的，id_rsa.pub是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。
-        vi. ssh-keygen -t rsa -C &quot;youremail&quot; 自己git的邮箱，一直回车
-        vii. 这个时候生成了.ssh文件。在电脑中找到，或者git bash中输入    cat ~/.ssh/id_rsa.pub
-        viii. 打开github，在头像下面点击settings，再点击SSH and GPG keys，新建一个SSH，名字随便取一个都可以，把你的id_rsa.pub里面的信息复制进去。
-        ix. 在git bash输入 ssh -T git@github.com，出现你的用户名，那就成功了
-        x. 
-    f. 将hexo部署到github上
-        i. 将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开博客根目录下的_config.yml文件，这是博客的配置文件，在这里你可以修改与博客配置相关的各种信息。修改最后一行的配置：
-        ii. 
-        iii. 然后
-        iv. 
-        v. 其中 hexo clean清除了之前生成的东西，也可以不加。 hexo generate生成静态文章，可以用 hexo g缩写 ，hexo deploy部署文章，可以用hexo d缩写
-        vi. 新建一个自己的博客：
-            1) 在博客根目录下右键打开 git bash 安装一个扩展 npm i hexo-deployer-git
-            2) 然后输入 hexo new post &quot;我的第一篇博客&quot;，新建一篇文章。
-            3) 然后打开根目录下的 \source\_posts的目录，就可以发现两个.md文件，其中一个就是自己的文章
-            4) 可以会直接在vscode里面编写markdown文件，可以实时预览，也可以用用其他编辑md文件的软件的工具编写。
-            5) 编写完markdown文件后，根目录下输入hexo g生成静态网页，然后输入hexo s可以本地预览效果，最后输入hexo d上传到github上。这时打开你的github.io主页就能看到发布的文章啦
-        vii. 过一会儿就可以在http://yourname.github.io 这个网站看到博客了。看到是这样。可以在hexo d之前使用 hexo s 测试一下 成功的话就是这个界面；如果不是这个而是一个只有一行字的网址那就把上面配置里面的 branch：master修改成 branch：main；
-        viii. 
-</code></pre>
+        <h5 id="同时修改多条明细"><a href="#同时修改多条明细" class="headerlink" title="同时修改多条明细"></a>同时修改多条明细</h5><p>HashSet 是一个没有重复元素的集合。<br>它是由HashMap实现的，不保证元素的顺序，而且HashSet允许使用 null 元素。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt;ids=newHashSet&lt;&gt;();//</span><br><span class="line">String[]transFactor=&#123;&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>我们经常将数据放到集合中进行操作，因为java集合给我们提供了大量的方法函数使用，大大减少了我们的开发工作量。但是有时候我们需要的却是基础数据类型，比如数组，此时我们将集合类型转成数组。虽然集合类有个toArray()方法，但是返回的是Object[]类型，通常情况下我们可以考虑使用stream流进行转.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">target.forEach(t-&gt;&#123;</span><br><span class="line">    ids.add(t.getId())</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">lineWrapper.in(&quot;target_id&quot;,ids.toArray(transFactor))</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/04/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8D%9A%E5%AE%A2/" data-id="cla1sw2mw0002j0wz2vktghnj" data-title="陈佳乐的第个二博客" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/06/%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E5%A4%9A%E6%9D%A1%E6%98%8E%E7%BB%86/" data-id="cla5hwy1z0002j8wz9a4g5lmr" data-title="需要修改多条明细" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-layui" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/05/layui/" class="article-date">
+  <time class="dt-published" datetime="2022-11-05T10:52:26.000Z" itemprop="datePublished">2022-11-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/05/layui/">layui</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h5 id="layui的渲染方式"><a href="#layui的渲染方式" class="headerlink" title="layui的渲染方式"></a>layui的渲染方式</h5><ol>
+<li>用的最多的是访问url,之后会将数据渲染到表格中<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">table.render(&#123;</span><br><span class="line">    elem: &#x27;#demo&#x27;</span><br><span class="line">    ,height: 312</span><br><span class="line">    ,url: &#x27;../../demo/table/user/-page=1&amp;limit=30.js&#x27; //数据接口</span><br><span class="line">    ,page: true //开启分页</span><br><span class="line">    ,cols: [[ //表头</span><br><span class="line">      &#123;field: &#x27;id&#x27;, title: &#x27;ID&#x27;, width:80, sort: true, fixed: &#x27;left&#x27;&#125;</span><br><span class="line">      ,&#123;field: &#x27;username&#x27;, title: &#x27;用户名&#x27;, width:80&#125;</span><br><span class="line">      ,&#123;field: &#x27;sex&#x27;, title: &#x27;性别&#x27;, width:80, sort: true&#125;</span><br><span class="line">      ,&#123;field: &#x27;city&#x27;, title: &#x27;城市&#x27;, width:80&#125; </span><br><span class="line">    ]]</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/05/layui/" data-id="cla5hwy1p0000j8wzemge2raq" data-title="layui" class="article-share-link">Share</a>
       
       
       
@@ -178,7 +177,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/03/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/">陈佳乐的第一个博客</a>
+      <a class="p-name article-title" href="/2022/11/03/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/">Hexo+Github博客搭建教程</a>
     </h1>
   
 
@@ -186,62 +185,59 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="陈佳乐"><a href="#陈佳乐" class="headerlink" title="陈佳乐"></a>陈佳乐</h1><h2 id="2022-x2F-11-x2F-3"><a href="#2022-x2F-11-x2F-3" class="headerlink" title="2022&#x2F;11&#x2F;3"></a>2022&#x2F;11&#x2F;3</h2><h3 id="测试博客"><a href="#测试博客" class="headerlink" title="测试博客"></a>测试博客</h3><h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><h5 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h5><h6 id="测试-2"><a href="#测试-2" class="headerlink" title="测试"></a>测试</h6>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/03/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" data-id="cla1sw2mv0001j0wz9bjn8ig9" data-title="陈佳乐的第一个博客" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/02/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-11-02T06:52:55.552Z" itemprop="datePublished">2022-11-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/02/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <h5 id="博客基于Hexo。Hexo是高效的静态网站生成框架，它基于Node-js，快速，简单且功能强大，是搭建博客的首选框架。"><a href="#博客基于Hexo。Hexo是高效的静态网站生成框架，它基于Node-js，快速，简单且功能强大，是搭建博客的首选框架。" class="headerlink" title="博客基于Hexo。Hexo是高效的静态网站生成框架，它基于Node.js，快速，简单且功能强大，是搭建博客的首选框架。"></a>博客基于Hexo。Hexo是高效的静态网站生成框架，它基于Node.js，快速，简单且功能强大，是搭建博客的首选框架。</h5><ol>
+<li>搭建Hexo<ol>
+<li>安装git：<ol>
+<li>为了把本地的网页文件上传到github上面去，需要用到工具———Git[下载地址]。Git是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git教程(学习教程，不是安装教程)</li>
+<li>安装完成后在命令提示符中输入<code>git --version</code>来查看一下版本验证是否安装成功</li>
+</ol>
+</li>
+<li>安装node.js：Hexo是基于node.js编写的，所以需要安装一下node.js和里面的npm工具。<ol>
+<li>官网下载 <a target="_blank" rel="noopener" href="http://nodejs.cn/">node.js官网</a></li>
+<li>这里要特别注意,这里的环境配置主要配置的是npm安装的全局模块所在的路径，以及缓存cache的路径，之所以要配置，是因为以后在执行类似：npm install express [-g] （后面的可选参数-g，g代表global全局安装的意思）的安装语句时，会将安装的模块安装到【C:\Users\用户名\AppData\Roaming\npm】路径中，占C盘空间。 安装的文件夹【D:\nodejs】下创建两个文件夹【node_global】及【node_cache】</li>
+<li>安装时有个问题在下面会提到</li>
+<li>打开命令行终端，输入: <code>node-v</code>、<code>npm-v</code> 检查是否安装成功</li>
+</ol>
+</li>
+<li>安装Hexo<ol>
+<li>创建一个文件夹来存放自己的博客文件，然后cd到这个文件夹下面，或者在这个文件夹下面直接右击 git bash打开</li>
+<li>输入 <code>npm install -g hexo-cli</code> 安装hexo</li>
+<li>完成后<code>hexo -v</code> 验证是否成功</li>
+<li><strong>遇到的问题 ：使用npm安装时是全局安装，所以在上面安装node时需要特别注意配置环境变量；我在环境变量配置了使用nvm的node.js的位置，但是却没有将全模块所在路径和缓存路径放在我node.js安装的文件夹中，所以就会报错；‘hexo’ 不是内部或外部命令，也不是可运行的程序</strong></li>
+<li>初始化：接下来初始化一下hexo,即初始化我们的网站，进入我们主题根目录Hexo，输入<code>hexo init</code>初始化文件夹</li>
+<li>输入hexo g生成静态网页，然后输入hexo s打开本地服务器，按ctrl+c关闭本地服务器.</li>
+</ol>
+</li>
+<li>注册github创建个人账号<ol>
+<li>打开<a target="_blank" rel="noopener" href="https://github.com/%EF%BC%8C%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%E4%BB%93%E5%BA%93New">https://github.com/，新建一个项目仓库New</a> repository，如下所示；存储库要按照下面这个格式只有这样，将来要部署到GitHub page的时候，才会被识别</li>
+</ol>
+</li>
+<li>生成SSH添加到gitHub上<ol>
+<li>第一次使用git后需要将用户名和邮箱初始化，在之前存放博客创建的文件夹中，右键打开 git bash输入</li>
+<li><code>git config -- global user.name &quot;yourname&quot;  git config -- global user.email &quot;email&quot; </code></li>
+<li>用下面的语句检查一下：</li>
+<li><code> git config user.name  git config user.email</code></li>
+<li>然后创建ssh:ssh，简单来讲，就是一个秘钥，其中，id_rsa是你这台电脑的私人秘钥，不能给别人看的，id_rsa.pub是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上</li>
+<li><code>ssh-keygen -t rsa -C &quot;youremail&quot;</code> 自己git的邮箱，一直回车</li>
+<li>这个时候生成了.ssh文件。在电脑中找到，或者git bash中输入<code>cat ~/.ssh/id_rsa.pub</code></li>
+<li>打开github，在头像下面点击settings，再点击SSH and GPG keys，新建一个SSH，名字随便取一个都可以，把你的id_rsa.pub里面的信息复制进去。</li>
+<li>在git bash输入 <code>ssh -T git@github.com</code>，出现你的用户名，那就成功了</li>
+</ol>
+</li>
+<li>将hexo部署到github上<ol>
+<li>将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开博客根目录下的_config.yml文件，这是博客的配置文件，在这里你可以修改与博客配置相关的各种信息。修改最后一行的配置</li>
+<li>其中 <code>hexo clean</code>清除了之前生成的东西，也可以不加。 <code>hexo generate</code>生成静态文章，可以用 <code>hexo g</code>缩写 ，<code>hexo deploy</code>部署文章，可以用<code>hexo d</code>缩写</li>
+<li>过一会儿就可以在<code>http://yourname.github.io</code> 这个网站看到博客了</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/02/hello-world/" data-id="cla1sw2mq0000j0wza4cte3rt" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/03/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" data-id="cla5hwy1t0001j8wzd88hanat" data-title="Hexo+Github博客搭建教程" class="article-share-link">Share</a>
       
       
       
@@ -284,15 +280,15 @@
       <ul>
         
           <li>
-            <a href="/2022/11/04/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8D%9A%E5%AE%A2/">陈佳乐的第个二博客</a>
+            <a href="/2022/11/06/%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E5%A4%9A%E6%9D%A1%E6%98%8E%E7%BB%86/">需要修改多条明细</a>
           </li>
         
           <li>
-            <a href="/2022/11/03/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/">陈佳乐的第一个博客</a>
+            <a href="/2022/11/05/layui/">layui</a>
           </li>
         
           <li>
-            <a href="/2022/11/02/hello-world/">Hello World</a>
+            <a href="/2022/11/03/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/">Hexo+Github博客搭建教程</a>
           </li>
         
       </ul>
