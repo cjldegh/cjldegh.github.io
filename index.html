@@ -1,342 +1,439 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<meta name="twitter:card" content="summary_large_image">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
   
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <title>Hexo</title>
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
 
   
 <meta name="generator" content="Hexo 6.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
         
-      </nav>
-      <nav id="sub-nav">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-需要修改多条明细" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/06/%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E5%A4%9A%E6%9D%A1%E6%98%8E%E7%BB%86/" class="article-date">
-  <time class="dt-published" datetime="2022-11-06T10:52:26.000Z" itemprop="datePublished">2022-11-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/06/%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E5%A4%9A%E6%9D%A1%E6%98%8E%E7%BB%86/">需要修改多条明细</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h5 id="同时修改多条明细"><a href="#同时修改多条明细" class="headerlink" title="同时修改多条明细"></a>同时修改多条明细</h5><p>HashSet 是一个没有重复元素的集合。<br>它是由HashMap实现的，不保证元素的顺序，而且HashSet允许使用 null 元素。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt;ids=newHashSet&lt;&gt;();//</span><br><span class="line">String[]transFactor=&#123;&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>我们经常将数据放到集合中进行操作，因为java集合给我们提供了大量的方法函数使用，大大减少了我们的开发工作量。但是有时候我们需要的却是基础数据类型，比如数组，此时我们将集合类型转成数组。虽然集合类有个toArray()方法，但是返回的是Object[]类型，通常情况下我们可以考虑使用stream流进行转.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">target.forEach(t-&gt;&#123;</span><br><span class="line">    ids.add(t.getId())</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">lineWrapper.in(&quot;target_id&quot;,ids.toArray(transFactor))</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/06/%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E5%A4%9A%E6%9D%A1%E6%98%8E%E7%BB%86/" data-id="cla6htbov00012owz18sf4avp" data-title="需要修改多条明细" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-layui" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/05/layui/" class="article-date">
-  <time class="dt-published" datetime="2022-11-05T10:52:26.000Z" itemprop="datePublished">2022-11-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/05/layui/">layui</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h5 id="layui的渲染方式"><a href="#layui的渲染方式" class="headerlink" title="layui的渲染方式"></a>layui的渲染方式</h5><ol>
-<li>用的最多的是访问url,之后会将数据渲染到表格中。。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">table.render(&#123;</span><br><span class="line">    elem: &#x27;#demo&#x27;</span><br><span class="line">    ,height: 312</span><br><span class="line">    ,url: &#x27;../../demo/table/user/-page=1&amp;limit=30.js&#x27; //数据接口</span><br><span class="line">    ,page: true //开启分页</span><br><span class="line">    ,cols: [[ //表头</span><br><span class="line">      &#123;field: &#x27;id&#x27;, title: &#x27;ID&#x27;, width:80, sort: true, fixed: &#x27;left&#x27;&#125;</span><br><span class="line">      ,&#123;field: &#x27;username&#x27;, title: &#x27;用户名&#x27;, width:80&#125;</span><br><span class="line">      ,&#123;field: &#x27;sex&#x27;, title: &#x27;性别&#x27;, width:80, sort: true&#125;</span><br><span class="line">      ,&#123;field: &#x27;city&#x27;, title: &#x27;城市&#x27;, width:80&#125; </span><br><span class="line">    ]]</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/05/layui/" data-id="cla6htboq00002owz6rrkd7qy" data-title="layui" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-陈佳乐的第一个博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/03/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time class="dt-published" datetime="2022-11-03T10:52:26.000Z" itemprop="datePublished">2022-11-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/03/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/">Hexo+Github博客搭建教程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h5 id="博客基于Hexo。Hexo是高效的静态网站生成框架，它基于Node-js，快速，简单且功能强大，是搭建博客的首选框架。123"><a href="#博客基于Hexo。Hexo是高效的静态网站生成框架，它基于Node-js，快速，简单且功能强大，是搭建博客的首选框架。123" class="headerlink" title="博客基于Hexo。Hexo是高效的静态网站生成框架，它基于Node.js，快速，简单且功能强大，是搭建博客的首选框架。123"></a>博客基于Hexo。Hexo是高效的静态网站生成框架，它基于Node.js，快速，简单且功能强大，是搭建博客的首选框架。123</h5><ol>
-<li>搭建Hexo<ol>
-<li>安装git：<ol>
-<li>为了把本地的网页文件上传到github上面去，需要用到工具———Git[下载地址]。Git是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git教程(学习教程，不是安装教程)</li>
-<li>安装完成后在命令提示符中输入<code>git --version</code>来查看一下版本验证是否安装成功</li>
-</ol>
-</li>
-<li>安装node.js：Hexo是基于node.js编写的，所以需要安装一下node.js和里面的npm工具。<ol>
-<li>官网下载 <a target="_blank" rel="noopener" href="http://nodejs.cn/">node.js官网</a></li>
-<li>这里要特别注意,这里的环境配置主要配置的是npm安装的全局模块所在的路径，以及缓存cache的路径，之所以要配置，是因为以后在执行类似：npm install express [-g] （后面的可选参数-g，g代表global全局安装的意思）的安装语句时，会将安装的模块安装到【C:\Users\用户名\AppData\Roaming\npm】路径中，占C盘空间。 安装的文件夹【D:\nodejs】下创建两个文件夹【node_global】及【node_cache】</li>
-<li>安装时有个问题在下面会提到</li>
-<li>打开命令行终端，输入: <code>node-v</code>、<code>npm-v</code> 检查是否安装成功</li>
-</ol>
-</li>
-<li>安装Hexo<ol>
-<li>创建一个文件夹来存放自己的博客文件，然后cd到这个文件夹下面，或者在这个文件夹下面直接右击 git bash打开</li>
-<li>输入 <code>npm install -g hexo-cli</code> 安装hexo</li>
-<li>完成后<code>hexo -v</code> 验证是否成功</li>
-<li><strong>遇到的问题 ：使用npm安装时是全局安装，所以在上面安装node时需要特别注意配置环境变量；我在环境变量配置了使用nvm的node.js的位置，但是却没有将全模块所在路径和缓存路径放在我node.js安装的文件夹中，所以就会报错；‘hexo’ 不是内部或外部命令，也不是可运行的程序</strong></li>
-<li>初始化：接下来初始化一下hexo,即初始化我们的网站，进入我们主题根目录Hexo，输入<code>hexo init</code>初始化文件夹</li>
-<li>输入hexo g生成静态网页，然后输入hexo s打开本地服务器，按ctrl+c关闭本地服务器.</li>
-</ol>
-</li>
-<li>注册github创建个人账号<ol>
-<li>打开<a target="_blank" rel="noopener" href="https://github.com/%EF%BC%8C%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%E4%BB%93%E5%BA%93New">https://github.com/，新建一个项目仓库New</a> repository，如下所示；存储库要按照下面这个格式只有这样，将来要部署到GitHub page的时候，才会被识别</li>
-</ol>
-</li>
-<li>生成SSH添加到gitHub上<ol>
-<li>第一次使用git后需要将用户名和邮箱初始化，在之前存放博客创建的文件夹中，右键打开 git bash输入</li>
-<li><code>git config -- global user.name &quot;yourname&quot;  git config -- global user.email &quot;email&quot; </code></li>
-<li>用下面的语句检查一下：</li>
-<li><code> git config user.name  git config user.email</code></li>
-<li>然后创建ssh:ssh，简单来讲，就是一个秘钥，其中，id_rsa是你这台电脑的私人秘钥，不能给别人看的，id_rsa.pub是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上</li>
-<li><code>ssh-keygen -t rsa -C &quot;youremail&quot;</code> 自己git的邮箱，一直回车</li>
-<li>这个时候生成了.ssh文件。在电脑中找到，或者git bash中输入<code>cat ~/.ssh/id_rsa.pub</code></li>
-<li>打开github，在头像下面点击settings，再点击SSH and GPG keys，新建一个SSH，名字随便取一个都可以，把你的id_rsa.pub里面的信息复制进去。</li>
-<li>在git bash输入 <code>ssh -T git@github.com</code>，出现你的用户名，那就成功了</li>
-</ol>
-</li>
-<li>将hexo部署到github上<ol>
-<li>将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开博客根目录下的_config.yml文件，这是博客的配置文件，在这里你可以修改与博客配置相关的各种信息。修改最后一行的配置</li>
-<li>其中 <code>hexo clean</code>清除了之前生成的东西，也可以不加。 <code>hexo generate</code>生成静态文章，可以用 <code>hexo g</code>缩写 ，<code>hexo deploy</code>部署文章，可以用<code>hexo d</code>缩写</li>
-<li>过一会儿就可以在<code>http://yourname.github.io</code> 这个网站看到博客了</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/03/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" data-id="cla6htbox00022owzhxbl1c4c" data-title="Hexo+Github博客搭建教程" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/11/06/%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E5%A4%9A%E6%9D%A1%E6%98%8E%E7%BB%86/">需要修改多条明细</a>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
+          
         
-          <li>
-            <a href="/2022/11/05/layui/">layui</a>
-          </li>
         
-          <li>
-            <a href="/2022/11/03/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/">Hexo+Github博客搭建教程</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
     </div>
   </div>
+</nav>
 
   
-</aside>
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+          
+        </div>
+
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
+
       
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
   </div>
-</footer>
+</div>
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/06/%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E5%A4%9A%E6%9D%A1%E6%98%8E%E7%BB%86/" target="_self">
+          需要修改多条明细
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/11/06/%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E5%A4%9A%E6%9D%A1%E6%98%8E%E7%BB%86/" target="_self">
+        <div>
+          同时修改多条明细HashSet 是一个没有重复元素的集合。它是由HashMap实现的，不保证元素的顺序，而且HashSet允许使用 null 元素。 123Set&lt;String&gt;ids=newHashSet&lt;&gt;();//String[]transFactor=&#123;&#125;; 我们经常将数据放到集合中进行操作，因为java集合给我们提供了大量的方法函数使用，大大减
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-06 18:52" pubdate>
+              2022-11-06
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/05/layui/" target="_self">
+          layui
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/11/05/layui/" target="_self">
+        <div>
+          layui的渲染方式 用的最多的是访问url,之后会将数据渲染到表格中。。123456789101112table.render(&#123;    elem: &#x27;#demo&#x27;    ,height: 312    ,url: &#x27;../../demo/table/user/-page=1&amp;limit=30.js&#x27; //数据接口    ,page: t
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-05 18:52" pubdate>
+              2022-11-05
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/03/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" target="_self">
+          Hexo+Github博客搭建教程
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/11/03/%E9%99%88%E4%BD%B3%E4%B9%90%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" target="_self">
+        <div>
+          博客基于Hexo。Hexo是高效的静态网站生成框架，它基于Node.js，快速，简单且功能强大，是搭建博客的首选框架。123 搭建Hexo 安装git： 为了把本地的网页文件上传到github上面去，需要用到工具———Git[下载地址]。Git是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git教程(学习教程，不是安装教程) 安装完成后在命令提示符中输入
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-03 18:52" pubdate>
+              2022-11-03
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/js/script.js"></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>
