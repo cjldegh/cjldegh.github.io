@@ -16,27 +16,24 @@
   <meta name="author" content="陈佳乐">
   <meta name="keywords" content="">
   
-    <meta name="description" content="layui日期的使用 在使用日期选择框的时候一直报下面这个错  原因：没有加载模块，因为layui有很多模块，如果没有使用layui.all.js那么就需要在使用的时候用layui.use加载模块123layui.use([&amp;#x27;laydate&amp;#x27;],function()&amp;#123;&amp;#125;)   动态的更新select下拉框 在layui中的下拉框需要分开不同两年的数据，举个栗">
+    <meta name="description" content="List集合的Stream流处理 首先是根据每年的数据生成一张包含各种信息的统计表，就是每年可能有不同的大指标而大指标之下又会分成1，2，3等等很多小指标，这些小指标都会分别存入数据库中（无序） 使用下面这种方式来将每个小指标根据大指标来排一下序  一般适用于list集合，主要作用是模拟SQL查询，从集合中查询想要的数据，filter里面的参数是指集合里面的每一项 之后还需要将大指标相同的数据，把">
 <meta property="og:type" content="article">
-<meta property="og:title" content="layui日期的使用以及动态更新table和form">
-<meta property="og:url" content="http://example.com/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/index.html">
+<meta property="og:title" content="List集合的Stream流处理">
+<meta property="og:url" content="http://example.com/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="Lee的博客">
-<meta property="og:description" content="layui日期的使用 在使用日期选择框的时候一直报下面这个错  原因：没有加载模块，因为layui有很多模块，如果没有使用layui.all.js那么就需要在使用的时候用layui.use加载模块123layui.use([&amp;#x27;laydate&amp;#x27;],function()&amp;#123;&amp;#125;)   动态的更新select下拉框 在layui中的下拉框需要分开不同两年的数据，举个栗">
+<meta property="og:description" content="List集合的Stream流处理 首先是根据每年的数据生成一张包含各种信息的统计表，就是每年可能有不同的大指标而大指标之下又会分成1，2，3等等很多小指标，这些小指标都会分别存入数据库中（无序） 使用下面这种方式来将每个小指标根据大指标来排一下序  一般适用于list集合，主要作用是模拟SQL查询，从集合中查询想要的数据，filter里面的参数是指集合里面的每一项 之后还需要将大指标相同的数据，把">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/1.png">
-<meta property="og:image" content="http://example.com/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/2.png">
-<meta property="og:image" content="http://example.com/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/3.png">
-<meta property="og:image" content="http://example.com/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/4.png">
-<meta property="og:image" content="http://example.com/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/5.png">
-<meta property="article:published_time" content="2022-11-09T13:18:24.000Z">
-<meta property="article:modified_time" content="2022-11-10T14:39:35.399Z">
+<meta property="og:image" content="http://example.com/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/1.png">
+<meta property="og:image" content="http://example.com/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/2.png">
+<meta property="article:published_time" content="2022-11-10T14:44:27.000Z">
+<meta property="article:modified_time" content="2022-11-10T15:00:20.188Z">
 <meta property="article:author" content="陈佳乐">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/1.png">
+<meta name="twitter:image" content="http://example.com/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/1.png">
   
   
   
-  <title>layui日期的使用以及动态更新table和form - Lee的博客</title>
+  <title>List集合的Stream流处理 - Lee的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +210,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="layui日期的使用以及动态更新table和form"></span>
+            <span id="subtitle" data-typed-text="List集合的Stream流处理"></span>
           
         </div>
 
@@ -224,8 +221,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-09 21:18" pubdate>
-          2022年11月9日 晚上
+        <time datetime="2022-11-10 22:44" pubdate>
+          2022年11月10日 晚上
         </time>
       </span>
     
@@ -236,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          512 字
+          261 字
         
       </span>
     
@@ -247,7 +244,7 @@
         
         
         
-          5 分钟
+          3 分钟
         
       </span>
     
@@ -285,32 +282,19 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">layui日期的使用以及动态更新table和form</h1>
+            <h1 style="display: none">List集合的Stream流处理</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="layui日期的使用"><a href="#layui日期的使用" class="headerlink" title="layui日期的使用"></a>layui日期的使用</h3><ul>
-<li>在使用日期选择框的时候一直报下面这个错</li>
-<li><img src="/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/1.png" srcset="/img/loading.gif" lazyload class title="错误"></li>
-<li>原因：没有加载模块，因为<code>layui</code>有很多模块，如果没有使用<code>layui.all.js</code>那么就需要在使用的时候用<code>layui.use</code>加载模块<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php">layui.<span class="hljs-keyword">use</span>([<span class="hljs-string">&#x27;laydate&#x27;</span>],<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br><br>&#125;)<br></code></pre></td></tr></table></figure></li>
-</ul>
-<hr>
-<h3 id="动态的更新select下拉框"><a href="#动态的更新select下拉框" class="headerlink" title="动态的更新select下拉框"></a>动态的更新select下拉框</h3><ul>
-<li>在layui中的下拉框需要分开不同两年的数据，举个栗子：也就是选择18年后，相应的班级下拉框显示18级，年份选择19级，班级下拉框显示19级，数据库已经由不同年份分开</li>
-<li><strong>解决办法</strong>：首先使用laydate来选择不同的年份，选择完成后，给year赋值现在选择的年份，之后调用动态配置下拉框的方法</li>
-<li><img src="/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/2.png" srcset="/img/loading.gif" lazyload class title="解决办法"></li>
-<li>之后还会遇到 option堆叠的问题，也就是先查18年的数据，再查19年的数据，下拉框会同时显示18.19的数据</li>
-<li><strong>解决办法</strong></li>
-<li><img src="/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/3.png" srcset="/img/loading.gif" lazyload class title="解决办法"></li>
-<li>同样，非动态但是有判断条件的控制，需要在后面加上<code>form.render();</code>才能实现</li>
-</ul>
-<hr>
-<h3 id="动态的更新table"><a href="#动态的更新table" class="headerlink" title="动态的更新table"></a>动态的更新table</h3><ul>
-<li><img src="/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/4.png" srcset="/img/loading.gif" lazyload class title="问题"></li>
-<li>确实出现这个问题但是对我好像不能直接套用；因为我首先会根据年份·搜索首页面，并且之后还会用年份固定条件搜索，所以说 我在搜索的方法里面加了</li>
-<li><img src="/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/5.png" srcset="/img/loading.gif" lazyload class title="解决办法"></li>
-<li>这个方法；<br>之后调用渲染表格的方法，就可以实现了</li>
+                <h3 id="List集合的Stream流处理"><a href="#List集合的Stream流处理" class="headerlink" title="List集合的Stream流处理"></a>List集合的Stream流处理</h3><ul>
+<li>首先是根据每年的数据生成一张包含各种信息的统计表，就是每年可能有不同的大指标而大指标之下又会分成1，2，3等等很多小指标，这些小指标都会分别存入数据库中（无序）</li>
+<li>使用下面这种方式来将每个小指标根据大指标来排一下序</li>
+<li><img src="/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/1.png" srcset="/img/loading.gif" lazyload class title="方法"></li>
+<li>一般适用于list集合，主要作用是模拟SQL查询，从集合中查询想要的数据，filter里面的参数是指集合里面的每一项</li>
+<li>之后还需要将大指标相同的数据，把大指标合并成为一个渲染到表格中，就需要去重</li>
+<li><img src="/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/2.png" srcset="/img/loading.gif" lazyload class title="方法"></li>
+<li>而上图中的OneName就相当于是大指标，来按照这个去重保存到<code>same_one_list</code>中</li>
 </ul>
 
                 
@@ -329,8 +313,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>layui日期的使用以及动态更新table和form</div>
-      <div>http://example.com/2022/11/09/layui日期的使用以及动态更新table和form/</div>
+      <div>List集合的Stream流处理</div>
+      <div>http://example.com/2022/11/10/List集合的Stream流处理/</div>
     </div>
     <div class="license-meta">
       
@@ -342,7 +326,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月9日</div>
+          <div>2022年11月10日</div>
         </div>
       
       
@@ -374,18 +358,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/10/%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA-Excel/" title="文件导出@Excel">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">文件导出@Excel</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/06/%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E5%A4%9A%E6%9D%A1%E6%98%8E%E7%BB%86/" title="需要修改多条明细">
-                        <span class="hidden-mobile">需要修改多条明细</span>
+                      <a href="/2022/11/10/%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA-Excel/" title="文件导出@Excel">
+                        <span class="hidden-mobile">文件导出@Excel</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>List集合的Stream流处理</title>
+    <link href="/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/"/>
+    <url>/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/</url>
+    
+    <content type="html"><![CDATA[<h3 id="List集合的Stream流处理"><a href="#List集合的Stream流处理" class="headerlink" title="List集合的Stream流处理"></a>List集合的Stream流处理</h3><ul><li>首先是根据每年的数据生成一张包含各种信息的统计表，就是每年可能有不同的大指标而大指标之下又会分成1，2，3等等很多小指标，这些小指标都会分别存入数据库中（无序）</li><li>使用下面这种方式来将每个小指标根据大指标来排一下序</li><li><img src="/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/1.png" class title="方法"></li><li>一般适用于list集合，主要作用是模拟SQL查询，从集合中查询想要的数据，filter里面的参数是指集合里面的每一项</li><li>之后还需要将大指标相同的数据，把大指标合并成为一个渲染到表格中，就需要去重</li><li><img src="/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/2.png" class title="方法"></li><li>而上图中的OneName就相当于是大指标，来按照这个去重保存到<code>same_one_list</code>中</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>文件导出@Excel</title>
+    <link href="/2022/11/10/%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA-Excel/"/>
+    <url>/2022/11/10/%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA-Excel/</url>
+    
+    <content type="html"><![CDATA[<h3 id="文件导出的-Excel"><a href="#文件导出的-Excel" class="headerlink" title="文件导出的@Excel"></a>文件导出的@Excel</h3><ul><li>是个小问题</li><li>在导出文件的时候一直会报一个<code>index:0</code>的错误；搜索也找不到解决办法</li><li>之后又搜索了很多文件导出的例子才发现，需要在实体类中加入注解<code>@Excel自定义注解</code></li><li><code>@Excel</code> 作用到filed上面，是对Excel列的一个描述</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>layui日期的使用以及动态更新table和form</title>
     <link href="/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/"/>
     <url>/2022/11/09/layui%E6%97%A5%E6%9C%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0table%E5%92%8Cform/</url>
