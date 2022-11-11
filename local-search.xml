@@ -21,7 +21,7 @@
     <link href="/2022/11/10/%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA-Excel/"/>
     <url>/2022/11/10/%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA-Excel/</url>
     
-    <content type="html"><![CDATA[<h3 id="文件导出的-Excel"><a href="#文件导出的-Excel" class="headerlink" title="文件导出的@Excel"></a>文件导出的@Excel</h3><ul><li>是个小问题</li><li>在导出文件的时候一直会报一个<code>index:0</code>的错误；搜索也找不到解决办法</li><li>之后又搜索了很多文件导出的例子才发现，需要在实体类中加入注解<code>@Excel自定义注解</code></li><li><code>@Excel</code> 作用到filed上面，是对Excel列的一个描述</li></ul>]]></content>
+    <content type="html"><![CDATA[<h3 id="文件导出的-Excel"><a href="#文件导出的-Excel" class="headerlink" title="文件导出的@Excel"></a>文件导出的@Excel</h3><ul><li>是个小问题</li><li>在导出文件的时候一直会报一个<code>index:0</code>的错误；搜索也找不到解决办法</li><li>之后又搜索了很多文件导出的例子才发现，需要在实体类中加入注解<code>@Excel自定义注解</code></li><li><code>@Excel</code> 作用到filed上面，是对Excel列的一个描述</li><li>这是可能会使用到的</li><li><img src="/2022/11/10/%E6%96%87%E4%BB%B6%E5%AF%BC%E5%87%BA-Excel/1.png" class title="方法"></li></ul>]]></content>
     
     
     
