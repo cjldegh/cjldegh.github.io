@@ -8,7 +8,7 @@
     <link href="/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/"/>
     <url>/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/</url>
     
-    <content type="html"><![CDATA[<h3 id="List集合的Stream流处理"><a href="#List集合的Stream流处理" class="headerlink" title="List集合的Stream流处理"></a>List集合的Stream流处理</h3><ul><li>首先是根据每年的数据生成一张包含各种信息的统计表，就是每年可能有不同的大指标而大指标之下又会分成1，2，3等等很多小指标，这些小指标都会分别存入数据库中（无序）</li><li>使用下面这种方式来将每个小指标根据大指标来排一下序</li><li><img src="/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/1.png" class title="方法"></li><li>一般适用于list集合，主要作用是模拟SQL查询，从集合中查询想要的数据，filter里面的参数是指集合里面的每一项</li><li>之后还需要将大指标相同的数据，把大指标合并成为一个渲染到表格中，就需要去重</li><li><img src="/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/2.png" class title="方法"></li><li>而上图中的OneName就相当于是大指标，来按照这个去重保存到<code>same_one_list</code>中</li></ul>]]></content>
+    <content type="html"><![CDATA[<h3 id="List集合的Stream流处理"><a href="#List集合的Stream流处理" class="headerlink" title="List集合的Stream流处理"></a>List集合的Stream流处理</h3><ul><li><strong>问题</strong> 根据每年的数据生成一张包含各种信息的统计表，就是每年可能有不同的大指标而大指标之下又会分成1，2，3等等很多小指标，这些小指标都会分别存入数据库中（无序）</li><li><strong>解决办法</strong>使用下面这种方式来将每个小指标根据大指标来排一下序</li><li><img src="/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/1.png" class title="方法"></li><li>一般适用于list集合，主要作用是模拟SQL查询，从集合中查询想要的数据，filter里面的参数是指集合里面的每一项</li><li>之后还需要将大指标相同的数据，把大指标合并成为一个渲染到表格中，就需要去重</li><li><img src="/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/2.png" class title="方法"></li><li>而上图中的OneName就相当于是大指标，来按照这个去重保存到<code>same_one_list</code>中</li></ul>]]></content>
     
     
     
