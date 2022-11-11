@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>layui报错table</title>
+    <link href="/2022/11/11/layui%E6%8A%A5%E9%94%99table/"/>
+    <url>/2022/11/11/layui%E6%8A%A5%E9%94%99table/</url>
+    
+    <content type="html"><![CDATA[<h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a><strong>错误</strong></h3><ul><li>定义了一个数组来存放不同条件的table表头，但是一直运行出错，删除添加的数组就正常运行</li><li><img src="/2022/11/11/layui%E6%8A%A5%E9%94%99table/1.png" class></li><li>layui的table中存在这个render方法</li><li><strong>解决思路</strong></li><li><code>table.render()</code>没有被定义，但是检查完成已经被定义了</li><li><strong>解决办法</strong></li><li>是因为数组名称定义为了<code>var table = []</code>,所以在定义之后的，就默认是这个数组，所以就不会有自带的<code>render()</code>方法</li><li>修改数组名就行了</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>List集合的Stream流处理</title>
     <link href="/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/"/>
     <url>/2022/11/10/List%E9%9B%86%E5%90%88%E7%9A%84Stream%E6%B5%81%E5%A4%84%E7%90%86/</url>
