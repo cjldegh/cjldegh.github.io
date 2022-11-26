@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>导出jar包报错,不是自动配置类</title>
+    <link href="/2022/11/26/%E5%AF%BC%E5%87%BAjar%E5%8C%85%E6%8A%A5%E9%94%99-%E4%B8%8D%E6%98%AF%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B1%BB/"/>
+    <url>/2022/11/26/%E5%AF%BC%E5%87%BAjar%E5%8C%85%E6%8A%A5%E9%94%99-%E4%B8%8D%E6%98%AF%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B1%BB/</url>
+    
+    <content type="html"><![CDATA[<h4 id="导出jar包报错-不是自动配置类"><a href="#导出jar包报错-不是自动配置类" class="headerlink" title="导出jar包报错,不是自动配置类"></a>导出jar包报错,不是自动配置类</h4><ul><li>问题:在导出jar包的时候出现下面的错误</li><li><ul><li><img src="/2022/11/26/%E5%AF%BC%E5%87%BAjar%E5%8C%85%E6%8A%A5%E9%94%99-%E4%B8%8D%E6%98%AF%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B1%BB/1.png" class width="1"></li></ul></li><li>原因:</li><li><ol><li>这句话的意思是”不能排序以下类，因为他不是自动配置类”</li></ol></li><li><ol start="2"><li>之后就修改成了<code>@SpringBootApplication(exclude = &#123;DataSourceAutoConfiguration.class&#125;)</code></li></ol></li><li>而这个注释是会自动根据jar包的依赖来自动配置项目。例如就是用了Mybatis，它的配置文件中会指定数据库的相关参数，这个时候<code>exclude=&#123;DataSourceAutoConfiguration.class&#125;</code>，让spring-boot不用根据Maven中依赖自动配置了</li><li>修改之后又出现问题<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-type">Description</span>:<br><br><span class="hljs-type">The</span> bean &#x27;druidProperties&#x27;, defined in <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">path</span> <span class="hljs-title">resource</span> [cn/stylefeng/roses/core/config/<span class="hljs-type">MybatisDataSourceAutoConfiguration</span>.class], <span class="hljs-title">could</span> <span class="hljs-title">not</span> <span class="hljs-title">be</span> <span class="hljs-title">registered</span>. <span class="hljs-title">A</span> <span class="hljs-title">bean</span> <span class="hljs-keyword">with</span> <span class="hljs-title">that</span> <span class="hljs-title">name</span> <span class="hljs-title">has</span> <span class="hljs-title">already</span> <span class="hljs-title">been</span> <span class="hljs-title">defined</span> <span class="hljs-title">in</span> <span class="hljs-title">class</span> <span class="hljs-title">path</span> <span class="hljs-title">resource</span> [cn/stylefeng/guns/config/datasource/<span class="hljs-type">DataSourceConfig</span>.class] <span class="hljs-title">and</span> <span class="hljs-title">overriding</span> <span class="hljs-title">is</span> <span class="hljs-title">disabled</span>.</span><br><br><span class="hljs-type">Action</span>:<br><br><span class="hljs-type">Consider</span> renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure></li><li>解决办法：在<code>application.yml</code>文件中添加</li><li><img src="/2022/11/26/%E5%AF%BC%E5%87%BAjar%E5%8C%85%E6%8A%A5%E9%94%99-%E4%B8%8D%E6%98%AF%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B1%BB/3.png" class width="1"></li><li>一般这个配置 会写在springboot的application.properties下面，这个配置主要是声明spring框架是否允许定义重名的bean对象覆盖原有的bean (spring boot默认是false)，spring.main.allow-bean-definition-overriding &#x3D; true就是允许定义相同的bean对象去覆盖原有的</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>工作事项失效功能失效</title>
+    <link href="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/"/>
+    <url>/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/</url>
+    
+    <content type="html"><![CDATA[<h4 id="工作事项失效功能失效"><a href="#工作事项失效功能失效" class="headerlink" title="工作事项失效功能失效"></a>工作事项失效功能失效</h4><ul><li>需求:在工作事项修改时增加工作事项事项的功能，并且如果三层事项失效那么相关对应的三层明细、四层事项、以及四层明细都需要变更失效，对于三层明细、四层事项变更失效时同样如此;但是现在这个功能会出现变更失效流程走完之后事项依然有效的问题</li><li>问题1:在完成修改后保存变更时会通过<code>updateThree()</code>方法(以三层为例)在数据库中缓存一条变更的数据并且利用<code>attribute5</code>属性来保存变更之前的数据id,而在保存的时候会首先查询是否之前就存在未审核的变更，如果保存过就进行修改，如果没有保存过就新建一条数据；</li><li><ul><li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/4.png" class width="1"></li></ul></li><li><ul><li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/5.png" class width="2"></li></ul></li><li><ul><li>但是经过两次变更但是没有提交审核，BusinessStatus就会是ING</li></ul></li><li><ul><li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/6.JPG" class width="3"></li></ul></li><li>问题2:经过两次变更并且状态是ING的数据进行审核时，会因为系统中默认对新数据的处理而修改<code>status=1</code>;这样就使得失效变更失效（本来失效变更就是将状态修改为<code>status=-1</code>）</li><li><ul><li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/1.png" class width="4"></li></ul></li><li>问题3: 变更之后的数据数据库中不删除，知识把状态修改成了0,<code>status=0</code>,但是在进行状态修改时，将全部的与该三层对应的三层明细全部查找出来并进行状态的修改，这样会造成数据出错</li><li><ul><li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/7.png" class width="5"></li></ul></li><li>问题1&amp;&amp;问题2解决办法</li><li><ol><li>在变更的数据保存时，把<code>BusinessStatus</code>取得数据由之前的如果数据从未变更过就取原数据的值，而若数据变更过则取变更但是未提交的数据的值，修改为一直都取原理啊数据的值，这样就不会出现经过两次变更<code>BusinessStatus=&quot;ING&quot;</code>的情况。在数据审核过程中就不会将失效的status修改为1.</li></ol></li><li>问题3解决办法</li><li><ol><li>增加查询条件，只修改状态<code>status=1</code>的数据</li></ol></li><li><ol start="2"><li>并且原来数据<code>BusinessStatus=&#39;INVALID&#39;</code>修改为失效</li></ol></li><li><ol start="3"><li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/2.png" class width="6"></li></ol></li><li><ol start="4"><li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/3.png" class width="7"></li></ol></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>DATE_FORMAT</title>
     <link href="/2022/11/19/DATE-FORMAT/"/>
     <url>/2022/11/19/DATE-FORMAT/</url>

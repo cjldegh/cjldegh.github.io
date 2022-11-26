@@ -16,27 +16,29 @@
   <meta name="author" content="陈佳乐">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java时间格式转换 遇到的问题:在一个实现Excel导入中需要将Excel中的获取的数据转换成Date类型的存入，由于也包括从页面添加的数据，所以要实现两个数据的格式统一。  使用这个方法将数据类型进行转换  SimpleDateFormat类 日期和时间格式由 日期和时间模式字符串 指定。在 日期和时间模式字符串 中，未加引号的字母 ‘A’ 到 ‘Z’ 和 ‘a’ 到 ‘z’ 被解释为模式字母">
+    <meta name="description" content="工作事项失效功能失效 需求:在工作事项修改时增加工作事项事项的功能，并且如果三层事项失效那么相关对应的三层明细、四层事项、以及四层明细都需要变更失效，对于三层明细、四层事项变更失效时同样如此;但是现在这个功能会出现变更失效流程走完之后事项依然有效的问题 问题1:在完成修改后保存变更时会通过updateThree()方法(以三层为例)在数据库中缓存一条变更的数据并且利用attribute5属性来保存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DATE_FORMAT">
-<meta property="og:url" content="http://example.com/2022/11/19/DATE-FORMAT/index.html">
+<meta property="og:title" content="工作事项失效功能失效">
+<meta property="og:url" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/index.html">
 <meta property="og:site_name" content="Lee的博客">
-<meta property="og:description" content="Java时间格式转换 遇到的问题:在一个实现Excel导入中需要将Excel中的获取的数据转换成Date类型的存入，由于也包括从页面添加的数据，所以要实现两个数据的格式统一。  使用这个方法将数据类型进行转换  SimpleDateFormat类 日期和时间格式由 日期和时间模式字符串 指定。在 日期和时间模式字符串 中，未加引号的字母 ‘A’ 到 ‘Z’ 和 ‘a’ 到 ‘z’ 被解释为模式字母">
+<meta property="og:description" content="工作事项失效功能失效 需求:在工作事项修改时增加工作事项事项的功能，并且如果三层事项失效那么相关对应的三层明细、四层事项、以及四层明细都需要变更失效，对于三层明细、四层事项变更失效时同样如此;但是现在这个功能会出现变更失效流程走完之后事项依然有效的问题 问题1:在完成修改后保存变更时会通过updateThree()方法(以三层为例)在数据库中缓存一条变更的数据并且利用attribute5属性来保存">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/11/19/DATE-FORMAT/1.png">
-<meta property="og:image" content="http://example.com/2022/11/19/DATE-FORMAT/3.png">
-<meta property="og:image" content="http://example.com/2022/11/19/DATE-FORMAT/2.png">
-<meta property="og:image" content="http://example.com/2022/11/19/DATE-FORMAT/4.png">
-<meta property="og:image" content="http://example.com/2022/11/19/DATE-FORMAT/5.png">
-<meta property="article:published_time" content="2022-11-19T09:20:09.000Z">
-<meta property="article:modified_time" content="2022-11-19T10:06:37.169Z">
+<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/4.png">
+<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/5.png">
+<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/6.JPG">
+<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/1.png">
+<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/7.png">
+<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/2.png">
+<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/3.png">
+<meta property="article:published_time" content="2022-11-25T06:48:09.000Z">
+<meta property="article:modified_time" content="2022-11-26T10:45:13.392Z">
 <meta property="article:author" content="陈佳乐">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/11/19/DATE-FORMAT/1.png">
+<meta name="twitter:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/4.png">
   
   
   
-  <title>DATE_FORMAT - Lee的博客</title>
+  <title>工作事项失效功能失效 - Lee的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="DATE_FORMAT"></span>
+            <span id="subtitle" data-typed-text="工作事项失效功能失效"></span>
           
         </div>
 
@@ -224,8 +226,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-19 17:20" pubdate>
-          2022年11月19日 下午
+        <time datetime="2022-11-25 14:48" pubdate>
+          2022年11月25日 下午
         </time>
       </span>
     
@@ -236,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          729 字
         
       </span>
     
@@ -247,7 +249,7 @@
         
         
         
-          17 分钟
+          7 分钟
         
       </span>
     
@@ -285,52 +287,62 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">DATE_FORMAT</h1>
+            <h1 style="display: none">工作事项失效功能失效</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="Java时间格式转换"><a href="#Java时间格式转换" class="headerlink" title="Java时间格式转换"></a>Java时间格式转换</h3><ul>
-<li>遇到的问题:在一个实现Excel导入中需要将Excel中的获取的数据转换成Date类型的存入，由于也包括从页面添加的数据，所以要实现两个数据的格式统一。</li>
-<li><img src="/2022/11/19/DATE-FORMAT/1.png" srcset="/img/loading.gif" lazyload class></li>
-<li>使用这个方法将数据类型进行转换</li>
+                <h4 id="工作事项失效功能失效"><a href="#工作事项失效功能失效" class="headerlink" title="工作事项失效功能失效"></a>工作事项失效功能失效</h4><ul>
+<li>需求:在工作事项修改时增加工作事项事项的功能，并且如果三层事项失效那么相关对应的三层明细、四层事项、以及四层明细都需要变更失效，对于三层明细、四层事项变更失效时同样如此;但是现在这个功能会出现变更失效流程走完之后事项依然有效的问题</li>
+<li>问题1:在完成修改后保存变更时会通过<code>updateThree()</code>方法(以三层为例)在数据库中缓存一条变更的数据并且利用<code>attribute5</code>属性来保存变更之前的数据id,而在保存的时候会首先查询是否之前就存在未审核的变更，如果保存过就进行修改，如果没有保存过就新建一条数据；</li>
+<li><ul>
+<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/4.png" srcset="/img/loading.gif" lazyload class width="1"></li>
 </ul>
-<h4 id="SimpleDateFormat类"><a href="#SimpleDateFormat类" class="headerlink" title="SimpleDateFormat类"></a>SimpleDateFormat类</h4><ul>
-<li>日期和时间格式由 日期和时间模式字符串 指定。在 日期和时间模式字符串 中，未加引号的字母 ‘A’ 到 ‘Z’ 和 ‘a’ 到 ‘z’ 被解释为模式字母，用来表示日期或时间字符串元素。</li>
-<li>例如：</li>
-<li><img src="/2022/11/19/DATE-FORMAT/3.png" srcset="/img/loading.gif" lazyload class></li>
+</li>
+<li><ul>
+<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/5.png" srcset="/img/loading.gif" lazyload class width="2"></li>
+</ul>
+</li>
+<li><ul>
+<li>但是经过两次变更但是没有提交审核，BusinessStatus就会是ING</li>
+</ul>
+</li>
+<li><ul>
+<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/6.JPG" srcset="/img/loading.gif" lazyload class width="3"></li>
+</ul>
+</li>
+<li>问题2:经过两次变更并且状态是ING的数据进行审核时，会因为系统中默认对新数据的处理而修改<code>status=1</code>;这样就使得失效变更失效（本来失效变更就是将状态修改为<code>status=-1</code>）</li>
+<li><ul>
+<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/1.png" srcset="/img/loading.gif" lazyload class width="4"></li>
+</ul>
+</li>
+<li>问题3: 变更之后的数据数据库中不删除，知识把状态修改成了0,<code>status=0</code>,但是在进行状态修改时，将全部的与该三层对应的三层明细全部查找出来并进行状态的修改，这样会造成数据出错</li>
+<li><ul>
+<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/7.png" srcset="/img/loading.gif" lazyload class width="5"></li>
+</ul>
+</li>
+<li>问题1&amp;&amp;问题2解决办法</li>
 <li><ol>
-<li>SimpleDateFormat中parse方法，就是上面使用到的方法，主要作用是 将字符串转换成时间，parse()方法返回的是一个Date类型的数据</li>
+<li>在变更的数据保存时，把<code>BusinessStatus</code>取得数据由之前的如果数据从未变更过就取原数据的值，而若数据变更过则取变更但是未提交的数据的值，修改为一直都取原理啊数据的值，这样就不会出现经过两次变更<code>BusinessStatus=&quot;ING&quot;</code>的情况。在数据审核过程中就不会将失效的status修改为1.</li>
+</ol>
+</li>
+<li>问题3解决办法</li>
+<li><ol>
+<li>增加查询条件，只修改状态<code>status=1</code>的数据</li>
 </ol>
 </li>
 <li><ol start="2">
-<li>format方法：将时间转化为字符串，返回的是一个StringBuffer类型的数据</li>
+<li>并且原来数据<code>BusinessStatus=&#39;INVALID&#39;</code>修改为失效</li>
 </ol>
 </li>
-</ul>
-<h4 id="在数据库中的使用"><a href="#在数据库中的使用" class="headerlink" title="在数据库中的使用"></a>在数据库中的使用</h4><ul>
-<li><ol>
-<li>DATE_FORMAT()方法:主要作用是用于以不同的格式显示日期&#x2F;时间数据，下图中的<code>%Y-%m-%d</code>是使用的特定格式</li>
+<li><ol start="3">
+<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/2.png" srcset="/img/loading.gif" lazyload class width="6"></li>
 </ol>
 </li>
-<li><img src="/2022/11/19/DATE-FORMAT/2.png" srcset="/img/loading.gif" lazyload class></li>
-<li>可用的格式</li>
-<li><img src="/2022/11/19/DATE-FORMAT/4.png" srcset="/img/loading.gif" lazyload class></li>
-<li><ol start="2">
-<li>计算日期</li>
+<li><ol start="4">
+<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/3.png" srcset="/img/loading.gif" lazyload class width="7"></li>
 </ol>
 </li>
-<li><img src="/2022/11/19/DATE-FORMAT/5.png" srcset="/img/loading.gif" lazyload class></li>
-<li>其他计算的方法<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">DateUtils</span>.</span></span>set<span class="hljs-constructor">Years(<span class="hljs-params">new</span> Date()</span>, <span class="hljs-number">2019</span>); <span class="hljs-comment">// 根据参数设置日期年份.输出:2019-05-16 19:30:20</span><br>        <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">DateUtils</span>.</span></span>add<span class="hljs-constructor">Months(<span class="hljs-params">new</span> Date()</span>, -<span class="hljs-number">1</span>); <span class="hljs-comment">// 根据参数增加日期月份.输出:2019-04-16 19:30:20</span><br>        <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">DateUtils</span>.</span></span>truncate(<span class="hljs-keyword">new</span> <span class="hljs-constructor">Date()</span>, Calendar.DATE); <span class="hljs-comment">// 根据参数截取日期.输出:2019-04-16 00:00:00</span><br>        <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">DateUtils</span>.</span></span>ceiling(<span class="hljs-keyword">new</span> <span class="hljs-constructor">Date()</span>, Calendar.DATE);  <span class="hljs-comment">// 根据参数向上进位日期.输出:2018-05-17 00:00:00</span><br>        <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">DateUtils</span>.</span></span>get<span class="hljs-constructor">FragmentInDays(<span class="hljs-params">new</span> Date()</span>, Calendar.MONTH); <span class="hljs-comment">// 根据参数截取范围内日期后返回天数.输出:16</span><br>        <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">DateUtils</span>.</span></span>truncated<span class="hljs-constructor">Equals(<span class="hljs-params">new</span> Date()</span>, <span class="hljs-keyword">new</span> <span class="hljs-constructor">Date()</span>, Calendar.DATE); <span class="hljs-comment">//根据参数范围比较日期是否相同,该例子只比较年月日.输出:true</span><br>        <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">DateUtils</span>.</span></span>truncated<span class="hljs-constructor">CompareTo(<span class="hljs-params">new</span> Date()</span>, <span class="hljs-keyword">new</span> <span class="hljs-constructor">Date()</span>, Calendar.MONTH); <span class="hljs-comment">//根据参数范围比较日期大小,该例子只比较年月.输出:0</span><br><br>        <span class="hljs-comment">// 举例</span><br>        get<span class="hljs-constructor">FirstSecondOfMonth()</span>; <span class="hljs-comment">// 获取当月第一秒</span><br>        get<span class="hljs-constructor">LastSecondOfMonth()</span>; <span class="hljs-comment">// 获取当月最后一秒</span><br>        get<span class="hljs-constructor">DayOfYear()</span>; <span class="hljs-comment">// 获取日期是该年的第几天</span><br>        get<span class="hljs-constructor">FirstSundayOfMonth()</span>; <span class="hljs-comment">// 获取当月的第一个周日</span><br>    &#125;<br><br>    public static void get<span class="hljs-constructor">FirstSecondOfMonth()</span> &#123;<br>        Date date = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Date()</span>;<br>        date = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">DateUtils</span>.</span></span>truncate(date, Calendar.MONTH); <span class="hljs-comment">// 截取日期到月份</span><br>        <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">System</span>.</span></span>out.println(date); <span class="hljs-comment">// 输出:2018-05-01 00:00:00</span><br>    &#125;<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
-<li>获取当前时间<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-built_in">Date</span> <span class="hljs-built_in">date</span> = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <br></code></pre></td></tr></table></figure></li>
-<li>获取当前时间戳<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">long timestamp <span class="hljs-operator">=</span> System.currentTimeMillis()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure></li>
-<li>日期转时间戳<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-type">Date</span> <span class="hljs-type">date</span> = <span class="hljs-built_in">new</span> <span class="hljs-type">Date</span>();<br>String <span class="hljs-type">timestamp</span> = String.valueOf(<span class="hljs-type">date</span>.getTime());<br><span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(<span class="hljs-type">timestamp</span>); <br></code></pre></td></tr></table></figure></li>
-<li>时间戳转日期<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">String <span class="hljs-type">timestamp</span> = &quot;1521480110000&quot;;<br><span class="hljs-type">Date</span> <span class="hljs-type">date</span> = <span class="hljs-built_in">new</span> <span class="hljs-type">Date</span>(<span class="hljs-built_in">new</span> Long(<span class="hljs-type">timestamp</span>));<br><span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(<span class="hljs-type">date</span>); <br></code></pre></td></tr></table></figure></li>
-<li>日期转字符串<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">SimpleDateFormat sdf = <span class="hljs-built_in">new</span> SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);<br><span class="hljs-type">Date</span> <span class="hljs-type">date</span> = <span class="hljs-built_in">new</span> <span class="hljs-type">Date</span>();<br>String dateStr = sdf.format(<span class="hljs-type">date</span>);<br><span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(dateStr);<br></code></pre></td></tr></table></figure></li>
-<li>字符串转日期<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs abnf">SimpleDateFormat sdf <span class="hljs-operator">=</span> new SimpleDateFormat(<span class="hljs-string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>)<span class="hljs-comment">;</span><br>String dateStr <span class="hljs-operator">=</span> <span class="hljs-string">&quot;2018-05-16 19:30:20&quot;</span><span class="hljs-comment">;</span><br>Date date <span class="hljs-operator">=</span> sdf.parse(dateStr)<span class="hljs-comment">;</span><br>System.out.println(date)<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure></li>
-<li>日期转日历<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-type">Date</span> <span class="hljs-type">date</span> = <span class="hljs-built_in">new</span> <span class="hljs-type">Date</span>();<br>Calendar c = Calendar.getInstance();<br>c.setTime(<span class="hljs-type">date</span>);<br><span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(c);<br></code></pre></td></tr></table></figure></li>
 </ul>
 
                 
@@ -349,8 +361,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>DATE_FORMAT</div>
-      <div>http://example.com/2022/11/19/DATE-FORMAT/</div>
+      <div>工作事项失效功能失效</div>
+      <div>http://example.com/2022/11/25/工作事项失效功能失效/</div>
     </div>
     <div class="license-meta">
       
@@ -362,7 +374,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月19日</div>
+          <div>2022年11月25日</div>
         </div>
       
       
@@ -394,9 +406,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/" title="工作事项失效功能失效">
+                      <a href="/2022/11/26/%E5%AF%BC%E5%87%BAjar%E5%8C%85%E6%8A%A5%E9%94%99-%E4%B8%8D%E6%98%AF%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B1%BB/" title="导出jar包报错,不是自动配置类">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">工作事项失效功能失效</span>
+                        <span class="hidden-mobile">导出jar包报错,不是自动配置类</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -404,8 +416,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/15/Java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8FPattern%E5%92%8CMatcher%E7%B1%BB/" title="Java正则表达式Pattern和Matcher类">
-                        <span class="hidden-mobile">Java正则表达式Pattern和Matcher类</span>
+                      <a href="/2022/11/19/DATE-FORMAT/" title="DATE_FORMAT">
+                        <span class="hidden-mobile">DATE_FORMAT</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
