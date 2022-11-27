@@ -16,29 +16,26 @@
   <meta name="author" content="陈佳乐">
   <meta name="keywords" content="">
   
-    <meta name="description" content="工作事项失效功能失效 需求: 在工作事项修改时增加工作事项事项的功能，并且如果三层事项失效那么相关对应的三层明细、四层事项、以及四层明细都需要变更失效，对于三层明细、四层事项变更失效时同样如此;但是现在这个功能会出现变更失效流程走完之后事项依然有效的问题 问题1: 在完成修改后保存变更时会通过updateThree()方法(以三层为例)在数据库中缓存一条变更的数据并且利用attribute5属性来">
+    <meta name="description" content="返回的数据状态不符合规范 问题 在工作事项反馈界面添加新的预算金额的表格来显示该事项所需的预算金额并反馈，但是在保证后台查找出数据的情况下，前端界面不能显示  之后检查发现从后端返回的数据code&#x3D;200,所以不符合规范  layui的table组件默认的规定的数据格式为123456&amp;#123;  &quot;code&quot;: 0,  &quot;msg&quot;: &quot;&amp;quo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="工作事项失效功能失效">
-<meta property="og:url" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/index.html">
+<meta property="og:title" content="返回的数据状态不符合规范">
+<meta property="og:url" content="http://example.com/2022/11/27/%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A7%84%E8%8C%83/index.html">
 <meta property="og:site_name" content="Lee的博客">
-<meta property="og:description" content="工作事项失效功能失效 需求: 在工作事项修改时增加工作事项事项的功能，并且如果三层事项失效那么相关对应的三层明细、四层事项、以及四层明细都需要变更失效，对于三层明细、四层事项变更失效时同样如此;但是现在这个功能会出现变更失效流程走完之后事项依然有效的问题 问题1: 在完成修改后保存变更时会通过updateThree()方法(以三层为例)在数据库中缓存一条变更的数据并且利用attribute5属性来">
+<meta property="og:description" content="返回的数据状态不符合规范 问题 在工作事项反馈界面添加新的预算金额的表格来显示该事项所需的预算金额并反馈，但是在保证后台查找出数据的情况下，前端界面不能显示  之后检查发现从后端返回的数据code&#x3D;200,所以不符合规范  layui的table组件默认的规定的数据格式为123456&amp;#123;  &quot;code&quot;: 0,  &quot;msg&quot;: &quot;&amp;quo">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/4.png">
-<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/5.png">
-<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/6.JPG">
-<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/1.png">
-<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/7.png">
-<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/2.png">
-<meta property="og:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/3.png">
-<meta property="article:published_time" content="2022-11-25T06:48:09.000Z">
-<meta property="article:modified_time" content="2022-11-27T03:09:42.021Z">
+<meta property="og:image" content="http://example.com/2022/11/27/%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A7%84%E8%8C%83/2.png">
+<meta property="og:image" content="http://example.com/2022/11/27/%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A7%84%E8%8C%83/1.png">
+<meta property="og:image" content="http://example.com/2022/11/27/%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A7%84%E8%8C%83/3.png">
+<meta property="og:image" content="http://example.com/2022/11/27/%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A7%84%E8%8C%83/4.png">
+<meta property="article:published_time" content="2022-11-27T03:26:22.000Z">
+<meta property="article:modified_time" content="2022-11-27T03:56:27.246Z">
 <meta property="article:author" content="陈佳乐">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/4.png">
+<meta name="twitter:image" content="http://example.com/2022/11/27/%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A7%84%E8%8C%83/2.png">
   
   
   
-  <title>工作事项失效功能失效 - Lee的博客</title>
+  <title>返回的数据状态不符合规范 - Lee的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="工作事项失效功能失效"></span>
+            <span id="subtitle" data-typed-text="返回的数据状态不符合规范"></span>
           
         </div>
 
@@ -226,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-25 14:48" pubdate>
-          2022年11月25日 下午
+        <time datetime="2022-11-27 11:26" pubdate>
+          2022年11月27日 上午
         </time>
       </span>
     
@@ -238,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          729 字
+          675 字
         
       </span>
     
@@ -249,7 +246,7 @@
         
         
         
-          7 分钟
+          6 分钟
         
       </span>
     
@@ -287,66 +284,34 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">工作事项失效功能失效</h1>
+            <h1 style="display: none">返回的数据状态不符合规范</h1>
             
             
               <div class="markdown-body">
                 
-                <h4 id="工作事项失效功能失效"><a href="#工作事项失效功能失效" class="headerlink" title="工作事项失效功能失效"></a>工作事项失效功能失效</h4><ul>
-<li><h5 id="需求"><a href="#需求" class="headerlink" title="需求:"></a>需求:</h5></li>
-<li>在工作事项修改时增加工作事项事项的功能，并且如果三层事项失效那么相关对应的三层明细、四层事项、以及四层明细都需要变更失效，对于三层明细、四层事项变更失效时同样如此;但是现在这个功能会出现变更失效流程走完之后事项依然有效的问题</li>
-<li><h5 id="问题1"><a href="#问题1" class="headerlink" title="问题1:"></a>问题1:</h5></li>
-<li>在完成修改后保存变更时会通过<code>updateThree()</code>方法(以三层为例)在数据库中缓存一条变更的数据并且利用<code>attribute5</code>属性来保存变更之前的数据id,而在保存的时候会首先查询是否之前就存在未审核的变更，如果保存过就进行修改，如果没有保存过就新建一条数据；</li>
-<li><ul>
-<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/4.png" srcset="/img/loading.gif" lazyload class title="图片1"></li>
-</ul>
-</li>
-<li><ul>
-<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/5.png" srcset="/img/loading.gif" lazyload class title="图片2"></li>
-</ul>
-</li>
-<li><ul>
-<li>但是经过两次变更但是没有提交审核，BusinessStatus就会是ING</li>
-</ul>
-</li>
-<li><ul>
-<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/6.JPG" srcset="/img/loading.gif" lazyload class title="图片3"></li>
-</ul>
-</li>
-<li><h5 id="问题2"><a href="#问题2" class="headerlink" title="问题2:"></a>问题2:</h5></li>
-<li>经过两次变更并且状态是ING的数据进行审核时，会因为系统中默认对新数据的处理而修改<code>status=1</code>;这样就使得失效变更失效（本来失效变更就是将状态修改为<code>status=-1</code>）</li>
-<li><ul>
-<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/1.png" srcset="/img/loading.gif" lazyload class title="图片4"></li>
-</ul>
-</li>
-<li><h5 id="问题3"><a href="#问题3" class="headerlink" title="问题3:"></a>问题3:</h5></li>
-<li>变更之后的数据数据库中不删除，知识把状态修改成了0,<code>status=0</code>,但是在进行状态修改时，将全部的与该三层对应的三层明细全部查找出来并进行状态的修改，这样会造成数据出错</li>
-<li><ul>
-<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/7.png" srcset="/img/loading.gif" lazyload class title="图片5"></li>
-</ul>
-</li>
-<li><h5 id="问题1-amp-amp-问题2解决办法"><a href="#问题1-amp-amp-问题2解决办法" class="headerlink" title="问题1&amp;&amp;问题2解决办法"></a>问题1&amp;&amp;问题2解决办法</h5></li>
+                <ul>
+<li><h3 id="返回的数据状态不符合规范"><a href="#返回的数据状态不符合规范" class="headerlink" title="返回的数据状态不符合规范"></a>返回的数据状态不符合规范</h3></li>
+<li><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4></li>
+<li>在工作事项反馈界面添加新的预算金额的表格来显示该事项所需的预算金额并反馈，但是在保证后台查找出数据的情况下，前端界面不能显示</li>
+<li><img src="/2022/11/27/%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A7%84%E8%8C%83/2.png" srcset="/img/loading.gif" lazyload class title="问题1"></li>
+<li>之后检查发现从后端返回的数据<code>code=200</code>,所以不符合规范</li>
+<li><img src="/2022/11/27/%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A7%84%E8%8C%83/1.png" srcset="/img/loading.gif" lazyload class title="问题1"></li>
+<li>layui的table组件默认的规定的数据格式为<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css">&#123;<br>  &quot;<span class="hljs-selector-tag">code</span>&quot;: <span class="hljs-number">0</span>,<br>  <span class="hljs-string">&quot;msg&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>  <span class="hljs-string">&quot;count&quot;</span>: <span class="hljs-number">1000</span>,<br>  <span class="hljs-string">&quot;data&quot;</span>: [&#123;&#125;, &#123;&#125;]<br>&#125; <br></code></pre></td></tr></table></figure></li>
+<li><h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4></li>
 <li><ol>
-<li>在变更的数据保存时，把<code>BusinessStatus</code>取得数据由之前的如果数据从未变更过就取原数据的值，而若数据变更过则取变更但是未提交的数据的值，修改为一直都取原理啊数据的值，这样就不会出现经过两次变更<code>BusinessStatus=&quot;ING&quot;</code>的情况。在数据审核过程中就不会将失效的status修改为1.</li>
-</ol>
-</li>
-<li><h5 id="问题3解决办法"><a href="#问题3解决办法" class="headerlink" title="问题3解决办法"></a>问题3解决办法</h5></li>
-<li><ol>
-<li>增加查询条件，只修改状态<code>status=1</code>的数据</li>
+<li>可以使用layui文档中提出的方法借助<code>parseData</code>回调函数将其解析成table组件所规定的数据格式<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs awk">table.render(&#123;<br>  elem: <span class="hljs-string">&#x27;#demp&#x27;</span><br>  ,url: <span class="hljs-string">&#x27;&#x27;</span><br>  ,parseData: <span class="hljs-keyword">function</span>(res)&#123; <span class="hljs-regexp">//</span>res 即为原始返回的数据<br>    return &#123;<br>      <span class="hljs-string">&quot;code&quot;</span>: res.status, <span class="hljs-regexp">//</span>解析接口状态<br>      <span class="hljs-string">&quot;msg&quot;</span>: res.message, <span class="hljs-regexp">//</span>解析提示文本<br>      <span class="hljs-string">&quot;count&quot;</span>: res.total, <span class="hljs-regexp">//</span>解析数据长度<br>      <span class="hljs-string">&quot;data&quot;</span>: res.data.item <span class="hljs-regexp">//</span>解析数据列表<br>    &#125;;<br>  &#125;<br>  <span class="hljs-regexp">//</span>,…… <span class="hljs-regexp">//</span>其他参数<br>&#125;);<br></code></pre></td></tr></table></figure></li>
 </ol>
 </li>
 <li><ol start="2">
-<li>并且原来数据<code>BusinessStatus=&#39;INVALID&#39;</code>修改为失效</li>
+<li>修改后台传递的数据<code>code</code>值</li>
 </ol>
 </li>
+<li><img src="/2022/11/27/%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A7%84%E8%8C%83/3.png" srcset="/img/loading.gif" lazyload class title="问题1"></li>
 <li><ol start="3">
-<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/2.png" srcset="/img/loading.gif" lazyload class title="图片6"></li>
+<li>新创建<code>LayuiPageInfo</code>用于layui的table返回数据</li>
 </ol>
 </li>
-<li><ol start="4">
-<li><img src="/2022/11/25/%E5%B7%A5%E4%BD%9C%E4%BA%8B%E9%A1%B9%E5%A4%B1%E6%95%88%E5%8A%9F%E8%83%BD%E5%A4%B1%E6%95%88/3.png" srcset="/img/loading.gif" lazyload class title="图片7"></li>
-</ol>
-</li>
+<li><img src="/2022/11/27/%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A7%84%E8%8C%83/4.png" srcset="/img/loading.gif" lazyload class title="问题1"></li>
 </ul>
 
                 
@@ -365,8 +330,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>工作事项失效功能失效</div>
-      <div>http://example.com/2022/11/25/工作事项失效功能失效/</div>
+      <div>返回的数据状态不符合规范</div>
+      <div>http://example.com/2022/11/27/返回的数据状态不符合规范/</div>
     </div>
     <div class="license-meta">
       
@@ -378,7 +343,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月25日</div>
+          <div>2022年11月27日</div>
         </div>
       
       
@@ -410,18 +375,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/26/%E5%AF%BC%E5%87%BAjar%E5%8C%85%E6%8A%A5%E9%94%99-%E4%B8%8D%E6%98%AF%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B1%BB/" title="导出jar包报错,不是自动配置类">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">导出jar包报错,不是自动配置类</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/19/DATE-FORMAT/" title="DATE_FORMAT">
-                        <span class="hidden-mobile">DATE_FORMAT</span>
+                      <a href="/2022/11/26/%E5%AF%BC%E5%87%BAjar%E5%8C%85%E6%8A%A5%E9%94%99-%E4%B8%8D%E6%98%AF%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%B1%BB/" title="导出jar包报错,不是自动配置类">
+                        <span class="hidden-mobile">导出jar包报错,不是自动配置类</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
