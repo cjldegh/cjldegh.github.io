@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>git提交报错</title>
+    <link href="/2022/12/04/git%E6%8A%A5%E9%94%99/"/>
+    <url>/2022/12/04/git%E6%8A%A5%E9%94%99/</url>
+    
+    <content type="html"><![CDATA[<h3 id="git提交报错"><a href="#git提交报错" class="headerlink" title="git提交报错"></a>git提交报错</h3><ul><li>提交错了分支，是在<code>git commit</code>提交的时候选择了master分支，但是应该提交到其他分支</li><li>解决方法：</li><li>在<code>git push</code>的时候<code>local</code>选择<code>master</code>而<code>Remote</code>则选择需要正确提交的远端分支，这样就可以了解决问题</li><li><img src="/2022/12/04/git%E6%8A%A5%E9%94%99/1.png" class title="错误"></li><li>学习：</li><li>git的commit和push的区别</li><li><ol><li><code>git commit</code>命令是将本地修改过的文件提交到本地库中，而<code>git push</code>命令是将本地库中的最新信息发送给远程库；</li></ol></li><li><ol start="2"><li><code>git commit</code>命令操作的是本地库，而<code>git push</code>命令操作的是远程库。</li></ol></li><li>所以说在<code>commit</code>出错后只是将错误的提交到了本地库，而<code>git push</code>的时候可以修改过来</li><li>其他方法：<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-number">1</span>、git reset HEAD^    <span class="hljs-regexp">//</span> 把上次提交恢复为未提交状态<br><span class="hljs-number">2</span>、git status    <span class="hljs-regexp">//</span> 查看当前状态<br><span class="hljs-number">3</span>、git stash    <span class="hljs-regexp">//</span> 将修改add到暂存区，暂存代码<br><span class="hljs-number">4</span>、git checkout 分支    <span class="hljs-regexp">//</span> 切换到需要提交的分支<br><span class="hljs-number">5</span>、git stash pop    <span class="hljs-regexp">//</span> 恢复成功，可提交<br>（然后就可以按照提交步骤提交代码了）<br><span class="hljs-number">6</span>、git pull    <span class="hljs-regexp">//</span> 先更新再提交<br><span class="hljs-number">7</span>、git status    <span class="hljs-regexp">//</span> 查看当前状态<br><span class="hljs-number">8</span>、git add .    <span class="hljs-regexp">//</span> 添加到暂存区<br><span class="hljs-number">9</span>、git commit -m <span class="hljs-string">&#x27;提交注释&#x27;</span><br><span class="hljs-number">10</span>、git push    <span class="hljs-regexp">//</span> 提交到远程<br></code></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>返回的数据状态不符合规范</title>
     <link href="/2022/11/27/%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A7%84%E8%8C%83/"/>
     <url>/2022/11/27/%E8%BF%94%E5%9B%9E%E7%9A%84%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A7%84%E8%8C%83/</url>
