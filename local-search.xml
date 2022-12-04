@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>BigDecimal数据类型初始化</title>
+    <link href="/2022/12/04/BigDecimal%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%9D%E5%A7%8B%E5%8C%96/"/>
+    <url>/2022/12/04/BigDecimal%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%9D%E5%A7%8B%E5%8C%96/</url>
+    
+    <content type="html"><![CDATA[<h3 id="BigDecimal数据类型初始化"><a href="#BigDecimal数据类型初始化" class="headerlink" title="BigDecimal数据类型初始化"></a>BigDecimal数据类型初始化</h3><h3 id="错误"><a href="#错误" class="headerlink" title="错误:"></a>错误:</h3><ul><li>在某个表中开发的导入功能，对于指标类型的数据不一定全部都是整数，所以设置为BigDecimal类型，但是在测试数据时却显示下面的形式，但是输入的是99.8</li><li><img src="/2022/12/04/BigDecimal%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%9D%E5%A7%8B%E5%8C%96/1.png" class title="错误"></li></ul><h4 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h4><ul><li>BigDecimal为大数据类型，更精准的计算，初始化的时候将Excel中获取的数据通过<code>cell.getNumericCellValue()</code>方法转化成了<code>double</code>类型的，所以就导致数据出现64位失真</li><li><img src="/2022/12/04/BigDecimal%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%9D%E5%A7%8B%E5%8C%96/2.png" class title="错误"></li><li>给出的数值，在大多数情况下需要比64bit更多的位数才能准确表示出来（甚至是需要无穷多位），而double类型的数值只有64bit，后面舍去的位数一定会带来误差，无法得到“数学上精确”的结果。</li></ul><h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><h5 id="注意1"><a href="#注意1" class="headerlink" title="注意1"></a>注意1</h5><ul><li>BigDecimal(double val)这个构造方法有时是无法精确预料的，因为double类型无法精确地存储0.1，所以说通过double类型初始化的BigDecimal类型，是不精确的。<strong>最好用String类型的数值字符串来初始化。</strong> String 构造方法是完全可预知的：写入 newBigDecimal(“0.1”) 将创建一个 BigDecimal，它正好等于预期的 0.1。</li></ul><h5 id="注意2"><a href="#注意2" class="headerlink" title="注意2"></a>注意2</h5><ul><li>如果必须使用double类型的数据，那就是用方法三的初始化方法<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-comment">// 方法1,错误</span><br>BigDecimal a = <span class="hljs-keyword">new</span> <span class="hljs-constructor">BigDecimal(0.1)</span>;<br><span class="hljs-comment">// 方法2</span><br>BigDecimal b = <span class="hljs-keyword">new</span> <span class="hljs-constructor">BigDecimal(<span class="hljs-string">&quot;0.1&quot;</span>)</span>;<br><span class="hljs-comment">// 方法3</span><br>BigDecimal c = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BigDecimal</span>.</span></span>value<span class="hljs-constructor">Of(0.1)</span>;<br></code></pre></td></tr></table></figure></li><li>因为第三种就是第二种的封装<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">public static BigDecimal value<span class="hljs-constructor">Of(<span class="hljs-params">double</span> <span class="hljs-params">val</span>)</span> &#123;<br>        return <span class="hljs-keyword">new</span> <span class="hljs-constructor">BigDecimal(Double.<span class="hljs-params">toString</span>(<span class="hljs-params">val</span>)</span>);<br>    &#125;<br></code></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>git提交报错</title>
     <link href="/2022/12/04/git%E6%8A%A5%E9%94%99/"/>
     <url>/2022/12/04/git%E6%8A%A5%E9%94%99/</url>
