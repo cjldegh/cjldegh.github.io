@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>根据List利用Stream查询指定数据</title>
+    <link href="/2023/01/04/%E6%A0%B9%E6%8D%AEList%E5%88%A9%E7%94%A8Stream%E6%9F%A5%E8%AF%A2%E6%8C%87%E5%AE%9A%E6%95%B0%E6%8D%AE/"/>
+    <url>/2023/01/04/%E6%A0%B9%E6%8D%AEList%E5%88%A9%E7%94%A8Stream%E6%9F%A5%E8%AF%A2%E6%8C%87%E5%AE%9A%E6%95%B0%E6%8D%AE/</url>
+    
+    <content type="html"><![CDATA[<h4 id="根据List利用Stream查询指定数据"><a href="#根据List利用Stream查询指定数据" class="headerlink" title="根据List利用Stream查询指定数据"></a>根据List利用Stream查询指定数据</h4><h5 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h5><ul><li>需要修改一组数据，根据条件查询出未修改之前的存放在List1中，在之前的操作中就已经将需要修改的数据进行修改，修改后的数据会形成一条新的数据，新数据除了id和修改项之外与原来数据相同，。新数据的attr5字段中保留着原来数据的id（由此来形成两条数据之间的联系），保留原来的数据是因为需要走流程审核。</li><li>现在审核时要同时显示修改之前的和之后的，那么就根据查询条件查出之前需要修改的，再依次根据原来的id与新数据attr5之间的关系查出新修改的</li></ul><h5 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h5><ul><li>最开始使用for循环，最初测试的时候少量的数据还有用，但是如果数据很多，依次查询就会非常慢<img src="/2023/01/04/%E6%A0%B9%E6%8D%AEList%E5%88%A9%E7%94%A8Stream%E6%9F%A5%E8%AF%A2%E6%8C%87%E5%AE%9A%E6%95%B0%E6%8D%AE/1.png" class title="错误"></li></ul><h5 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h5><ul><li>list是需要变更的原来的集合 也就是b</li><li>list2是需要被查询的集合（应该的数据库全部的数据，这里只查询了attr5不为空的，减少查询的数据）也就是a</li><li>.filter()进行筛选</li><li>.anyMatch()判断的条件里，任意一个元素成功，返回true</li><li>b的id等于a的attr5就返回true<img src="/2023/01/04/%E6%A0%B9%E6%8D%AEList%E5%88%A9%E7%94%A8Stream%E6%9F%A5%E8%AF%A2%E6%8C%87%E5%AE%9A%E6%95%B0%E6%8D%AE/2.png" class title="错误"></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>前端控制日期显示类型</title>
     <link href="/2022/12/11/%E5%89%8D%E7%AB%AF%E6%8E%A7%E5%88%B6%E6%97%A5%E6%9C%9F%E6%98%BE%E7%A4%BA%E7%B1%BB%E5%9E%8B/"/>
     <url>/2022/12/11/%E5%89%8D%E7%AB%AF%E6%8E%A7%E5%88%B6%E6%97%A5%E6%9C%9F%E6%98%BE%E7%A4%BA%E7%B1%BB%E5%9E%8B/</url>
